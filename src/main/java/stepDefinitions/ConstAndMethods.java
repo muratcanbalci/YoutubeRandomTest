@@ -11,5 +11,6 @@ public class ConstAndMethods extends AbstractClass {
     {
         driver = Driver.getDriver();
         PageFactory.initElements(driver,this);
+        String asd = "asd";
     }
 }
