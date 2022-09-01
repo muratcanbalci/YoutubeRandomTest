@@ -1,13 +1,35 @@
 package PageObjectModel;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import stepDefinitions.ConstAndMethods;
+
+import java.util.concurrent.TimeUnit;
 
 public class youtubeSkipAdd {
+    ConstAndMethods constAndMethods = new ConstAndMethods();
+    WebDriver driver;
+    int randomNumber;
+    String videoUrl;
+    String videoSure ="?t=60";
+    String kelime;
+    String sarilanSure;
+    @Before
+    public void setUp(){
+        System.setProperty("webdriver.chrome.driver", "C:/cucumbersenaryo/driver/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+    }
 
     @Given("^Go to google$")
     public void go_to_google() throws Throwable {
+        constAndMethods.gotoGoogle();
     }
 
     @When("^Result is between (\\d+) with (\\d+)$")

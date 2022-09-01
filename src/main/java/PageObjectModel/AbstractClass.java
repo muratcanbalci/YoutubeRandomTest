@@ -1,5 +1,6 @@
 package PageObjectModel;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +22,10 @@ public abstract class AbstractClass {
     public void sendKeysFunction(WebElement sendKeysElement,String value){
         wait.until(ExpectedConditions.visibilityOf(sendKeysElement));
         sendKeysElement.sendKeys(value);
+    }
+    public void sendKeysFunction(WebElement sendKeysElement, Keys keys){
+        wait.until(ExpectedConditions.visibilityOf(sendKeysElement));
+        sendKeysElement.sendKeys(keys);
     }
     public final String showUsernameFunction(WebElement myacc,WebElement usernameElement){
         wait.until(ExpectedConditions.elementToBeClickable(myacc));
