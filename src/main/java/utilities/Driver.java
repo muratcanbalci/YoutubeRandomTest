@@ -10,7 +10,7 @@ public class Driver {
     {
         if(driver==null)
         {
-            System.setProperty("webdriver.chrome.driver","C:\\hepsiburadaTestCases\\driver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver","C:\\YoutubeRandomTest\\driver\\chromedriver2.exe");
             driver=new ChromeDriver();
         }
         return driver;

@@ -7,6 +7,8 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import stepDefinitions.ConstAndMethods;
+import utilities.Driver;
+
 import java.util.concurrent.TimeUnit;
 
 public class youtubeSkipAdds {
@@ -71,5 +73,6 @@ public class youtubeSkipAdds {
     @Then("^Control to minute of video$")
     public void control_to_minute_of_video() throws Throwable {
         constAndMethods.controlToCurrentTime();
+        Driver.closeDriver();
     }
 }
