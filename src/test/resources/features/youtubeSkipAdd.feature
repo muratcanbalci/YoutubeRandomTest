@@ -15,12 +15,7 @@ Feature: Select a video according to random number on youtube
     When Search to TYT word in title
     Then Select video
 
-  Scenario: Skip adds
-    Given Click skip add button
-    When There is a add
-    Then Skip add or wait to finish
-
   Scenario: Skip forwards video
-    Given Skip 1st minute of video
-    When Pause video
+    Given Video is playing
+    When Skip 1st minute of video and pause
     Then Control to minute of video
