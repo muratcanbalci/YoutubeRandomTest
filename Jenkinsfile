@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'windows maven gradle agent1'
+      label 'win-agent'
     }
 
   }
