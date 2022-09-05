@@ -1,26 +1,22 @@
-pipeline{
-    agent any
-    stages{
-        stage ('Compile Stage'){
-            steps {
-                withMaven(maven: 'maven_3_8_1') {
-                    sh 'mvn clean install'
-                }
-            }
-        }
-        stage ('Test Stage'){
-                    steps {
-                        withMaven(maven: 'maven_3_8_1') {
-                            sh 'mvn test'
-                        }
-                    }
-                }
-        stage ('Cucumber Reports') {
-            steps {
-                cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber.json",
-                    jsonReportDirectory: 'target'
-            }
-        }
+pipeline {
+  agent {
+    node {
+      label 'windows maven gradle agent1'
     }
+
+  }
+  stages {
+    stage('Clean') {
+      steps {
+        bat 'mvn -DskipTests clean'
+      }
+    }
+
+    stage('Compile') {
+      steps {
+        bat 'mvn -DskipTests compile'
+      }
+    }
+
+  }
 }
