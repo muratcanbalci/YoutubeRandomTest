@@ -1,5 +1,6 @@
 Feature: Select a video according to random number on youtube
 
+  @Duplicate
   Scenario: Go to google and search a random number.
     Given Go to google
     When Result is between 1 with 5

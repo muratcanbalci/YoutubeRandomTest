@@ -6,11 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features",
-        glue = "stepDefinitions",
-        format = {"json:target/cucumber.json"},
-        plugin = { "pretty", "json:target/cucumber.json" },
-        monochrome = true
+        features = {"classpath:features"},
+        glue = {"stepDefinitions","PageObjectModel","utilities"},
+        plugin = {"pretty","html:target/cucumber-html-report","json:target/cucumber.json"},
+        monochrome = true,
+        dryRun = true,
+        tags = ("@Duplicate")
 )
 
 public class CucumberTest {
